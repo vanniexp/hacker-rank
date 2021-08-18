@@ -1,3 +1,7 @@
+<p align="center">
+    <img alt="HackerRank" src="logo.png">
+</p>
+
 # Hackerrank Solutions
 
 | Problem  |    |
