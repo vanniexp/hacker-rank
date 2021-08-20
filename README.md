@@ -2,7 +2,7 @@
     <img alt="HackerRank" src="logo.png">
 </p>
 
-# Hackerrank Solutions
+# Hackerrank.js
 
 | Problem  |    |
 | ------------- | ------------- |
