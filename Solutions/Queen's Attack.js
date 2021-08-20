@@ -51,9 +51,9 @@ function queensAttack(tableSize, obstacles, queenRow, queenColumn, obstaclesArra
     obstaclesArray.forEach((obstacle) => {
         const obstacleRow = obstacle[0];
         const obstacleColumn = obstacle[1];
-        const distanceRow = Math.abs(queenColumn - obstacleColumn);
-        const distanceColumn = Math.abs(queenRow - obstacleRow);
-        
+        const distanceRow = Math.abs(queenColumn - obstacleColumn) - 1;
+        const distanceColumn = Math.abs(queenRow - obstacleRow) - 1;
+
         if (queenRow === obstacleRow) {
             if (queenColumn < obstacleColumn) {
                 if (maxEast > distanceRow) {
@@ -70,21 +70,30 @@ function queensAttack(tableSize, obstacles, queenRow, queenColumn, obstaclesArra
             } else if (maxSouth > distanceColumn) {
                 maxSouth = distanceColumn;
             }
-        } else if (distanceColumn === distanceRow){
-            if(queenRow > obstacleRow && queenColumn > obstacleColumn){
-                
-            }else if(queenRow < obstacleRow && queenColumn < obstacleColumn){
-                
-            }else if(queenRow > obstacleRow && queenColumn < obstacleColumn){
-                
-            }else{
-                
+        } else if (distanceColumn === distanceRow) {
+            if (queenRow > obstacleRow && queenColumn > obstacleColumn) {//sudoeste
+                if (maxSouthWest > distanceColumn) {
+                    maxSouthWest = distanceColumn
+                }
+            } else if (queenRow < obstacleRow && queenColumn < obstacleColumn) {//nordeste
+                if (maxNorthEast > distanceColumn) {
+                    maxNorthEast = distanceColumn
+                }
+            } else if (queenRow > obstacleRow && queenColumn < obstacleColumn) {//sudeste
+                if (maxSouthEast > distanceColumn) {
+                    maxSouthEast = distanceColumn
+                }
+            } else {//noroeste
+                if (maxNorthWest > distanceColumn) {
+                    maxNorthWest = distanceColumn
+                }
             }
         }
     });
-
+    console.log(`${maxNorthWest}  ${maxNorth}  ${maxNorthEast}\n${maxWest}     ${maxEast}\n${maxSouthWest}  ${maxSouth}  ${maxSouthEast}`)
     return maxEast + maxNorth + maxWest + maxSouth + maxNorthWest + maxNorthEast + maxSouthWest + maxSouthEast;
 }
+
 function main() {
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
 
