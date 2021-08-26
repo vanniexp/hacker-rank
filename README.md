@@ -18,6 +18,7 @@
 | Problem  |    |
 | ------------- | ------------- |
 | Apple and Orange | [Description](https://www.hackerrank.com/challenges/apple-and-orange/problem)
+| Cats and a Mouse | [Description](https://www.hackerrank.com/challenges/cats-and-a-mouse/problem)
 | Queen's Attack II | [Description](https://www.hackerrank.com/challenges/queens-attack-2/problem)
 
 
